@@ -160,3 +160,4 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+/knowledge-management/repochat/src/models/codellama-7b.Q4_K_M.gguf

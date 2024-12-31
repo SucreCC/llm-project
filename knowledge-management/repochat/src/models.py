@@ -11,7 +11,7 @@ def hf_embeddings():
 def code_llama():
     callbackmanager = CallbackManager([StreamingStdOutCallbackHandler()])
     llm = LlamaCpp(
-        model_path="./models/codellama-7b.Q4_K_M.gguf",
+        model_path="/Users/dengkai/workspace/machine-learning/llm-project/knowledge-management/repochat/src/models/codellama-7b.Q4_K_M.gguf",
         n_ctx=2048,
         max_tokens=200,
         n_gpu_layers=1,
