@@ -7,8 +7,10 @@ from src.db import vector_db, load_to_db
 from src.models import hf_embeddings, code_llama
 from src.chain import response_chain
 
+# 初始化一些全局变量， 如消息，数据库名称等
 init_session_state()
 
+# 为前端页面设置一些配置信息
 st.set_page_config(
     page_title="RepoChat",
     page_icon="💻",

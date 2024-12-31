@@ -8,7 +8,10 @@ from langchain.document_loaders import NotebookLoader, TextLoader
 
 def vector_db(embeddings, code):
     collection_name = "db_collection"
-    local_directory = "db_" + st.session_state["db_name"]
+    db_name = "test_db"
+    if "db_name" in st.session_state:
+        db_name = st.session_state["db_name"]
+    local_directory = "db_" + db_name
     persist_directory = os.path.join(os.getcwd(), local_directory)
 
     if os.path.exists(persist_directory):
@@ -45,6 +48,7 @@ def load_to_db(repo_path):
             except Exception as e:
                 pass
 
+    # 将文本拆分成为2000个字符的小块， 每一块有200个字符的重叠。
     code_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
     code = code_splitter.split_documents(docs)
     return code
